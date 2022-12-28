@@ -1,4 +1,4 @@
-package basics.of.development.loops;
+package basics_of_development.loops;
 
 /*
   Напишите программу, где пользователь вводит любое целое положительное число. А программа суммирует

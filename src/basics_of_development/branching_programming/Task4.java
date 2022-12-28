@@ -1,4 +1,4 @@
-package basics.of.development.branching.programming;
+package basics_of_development.branching_programming;
 /*
   Заданы размеры А, В прямоугольного отверстия и размеры х, у, z кирпича. Определить, пройдет ли кирпич через
   отверстие.

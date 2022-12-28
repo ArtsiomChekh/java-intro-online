@@ -1,4 +1,4 @@
-package basics.of.development.loops;
+package basics_of_development.loops;
 
 /*
   Вывести на экран соответствий между символами и их численными обозначениями в памяти компьютера.

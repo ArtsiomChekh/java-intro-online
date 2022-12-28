@@ -1,4 +1,4 @@
-package basics.of.development.linear.programming;
+package basics_of_development.linear_programming;
 
 // Найдите значение функции: z = ((a - 3) * b / 2) + c
 

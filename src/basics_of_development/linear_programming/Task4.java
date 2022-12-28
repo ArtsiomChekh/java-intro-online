@@ -1,4 +1,4 @@
-package basics.of.development.linear.programming;
+package basics_of_development.linear_programming;
 
 /* Дано действительное число R вида nnn.ddd (три цифровых разряда в дробной и целой частях). Поменять местами
    дробную и целую части числа и вывести полученное значение числа.

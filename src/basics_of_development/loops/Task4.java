@@ -1,4 +1,4 @@
-package basics.of.development.loops;
+package basics_of_development.loops;
 /*
   Составить программу нахождения произведения квадратов первых двухсот чисел.
 */

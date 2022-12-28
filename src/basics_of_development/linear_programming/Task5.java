@@ -1,4 +1,4 @@
-package basics.of.development.linear.programming;
+package basics_of_development.linear_programming;
 
 /* Дано натуральное число Т, которое представляет длительность прошедшего времени в секундах. Вывести
    данное значение длительности в часах, минутах и секундах в следующей форме: ННч ММмин SSc.

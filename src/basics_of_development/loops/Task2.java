@@ -1,4 +1,4 @@
-package basics.of.development.loops;
+package basics_of_development.loops;
 /*
   Вычислить значения функции на отрезке [а,b] c шагом h
   y = x, (x > 2) & -x, (x <= 2)

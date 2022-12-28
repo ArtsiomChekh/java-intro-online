@@ -1,4 +1,4 @@
-package basics.of.development.loops;
+package basics_of_development.loops;
 /*
 Найти сумму квадратов первых ста чисел 1-100
 */

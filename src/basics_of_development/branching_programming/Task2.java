@@ -1,4 +1,4 @@
-package basics.of.development.branching.programming;
+package basics_of_development.branching_programming;
 
 /*
   Найти max{min(a, b), min(c, d)}.

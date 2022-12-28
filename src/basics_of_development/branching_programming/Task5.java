@@ -1,4 +1,4 @@
-package basics.of.development.branching.programming;
+package basics_of_development.branching_programming;
 /*
   Вычислить значение функции: F(x) = x^2 - 3x + 9 если (x <= 3) &&  1 / (x^2 + 6) если (x > 3)
 */

@@ -1,4 +1,4 @@
-package basics.of.development.loops;
+package basics_of_development.loops;
 /*
   Даны два числа. Определить цифры, входящие в запись как первого так и второго числа
 */

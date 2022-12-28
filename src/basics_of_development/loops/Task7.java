@@ -1,4 +1,4 @@
-package basics.of.development.loops;
+package basics_of_development.loops;
 /*
   Для каждого натурального числа в промежутке от m до n вывести все делители, кроме единицы и самого числа.
   m и n вводятся с клавиатуры.
