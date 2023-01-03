@@ -15,6 +15,7 @@ public class Task5 {
       System.out.println("Введите значение для числа n (n - четное):");
       int n = scanner.nextInt();
       scanner.close();
+
       // выбросим исключение в случае ввода нечетного числа
       if (n % 2 != 0) {
         throw new InputMismatchException();
@@ -29,9 +30,9 @@ public class Task5 {
       }
 
       // выведем на экран результат
-      for (int[] ints : matrix) {
-        for (int anInt : ints) {
-          System.out.printf("%4d", anInt);
+      for (int[] row : matrix) {
+        for (int element : row) {
+          System.out.printf("%4d", element);
         }
         System.out.println();
       }

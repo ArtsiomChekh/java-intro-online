@@ -6,7 +6,7 @@ package algorithmization.array_of_arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Task4 {
+public class Task6 {
 
   public static void main(String[] args) {
 
@@ -23,12 +23,14 @@ public class Task4 {
 
       int[][] matrix = new int[n][n];
 
-      for (int i = 0; i < matrix.length; i++) {
-        for (int j = 0; j < matrix[i].length; j++) {
-          if (i % 2 == 0) {
-            matrix[i][j] = j + 1;
-          } else {
-            matrix[i][j] = n - j;
+      for (int i = 0; i < n; i++) {
+        if (i <= (n / 2) - 1) {
+          for (int j = i; j < n - i; j++) {
+            matrix[i][j] = 1;
+          }
+        } else if (i > n / 2) {
+          for (int j = matrix[i].length - 1 - i; j < i + 1; j++) {
+            matrix[i][j] = 1;
           }
         }
       }

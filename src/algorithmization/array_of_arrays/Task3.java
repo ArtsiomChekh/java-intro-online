@@ -20,9 +20,9 @@ public class Task3 {
       };
 
       // выведем на экран
-      for (int[] ints : matrix) {
-        for (int anInt : ints) {
-          System.out.printf("%4d", anInt);
+      for (int[] row : matrix) {
+        for (int element : row) {
+          System.out.printf("%4d", element);
         }
         System.out.println();
       }

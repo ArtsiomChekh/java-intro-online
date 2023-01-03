@@ -16,10 +16,11 @@ public class Task2 {
           {23, 42, 24, 1, 4},
           {1, 4, 7, 2, 1}
       };
+
       // выведем на экран
-      for (int[] ints : matrix) {
-        for (int anInt : ints) {
-          System.out.printf("%4d", anInt);
+      for (int[] row : matrix) {
+        for (int element : row) {
+          System.out.printf("%4d", element);
         }
         System.out.println();
       }
