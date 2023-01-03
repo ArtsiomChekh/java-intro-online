@@ -14,6 +14,7 @@ public class Task2 {
       Scanner scanner = new Scanner(System.in);
       System.out.println("Введите значение для числа Z (от -50 до 50):");
       int z = scanner.nextInt();
+      scanner.close();
 
       Random random = new Random();
 

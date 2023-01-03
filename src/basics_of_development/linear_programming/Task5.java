@@ -14,7 +14,6 @@ public class Task5 {
     try {
 
       Scanner scanner = new Scanner(System.in);
-
       System.out.println("Введите количество секунд:");
       int s = scanner.nextInt();
       scanner.close();

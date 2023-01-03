@@ -19,6 +19,8 @@ public class Task7 {
       System.out.println("Введите значение для числа n:");
       int n = scanner.nextInt();
 
+      scanner.close();
+
       for (int i = m; i <= n; i++) {
         System.out.print(i + ": ");
         for (int j = 2; j < i; j++) {

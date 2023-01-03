@@ -28,6 +28,8 @@ public class Task4 {
       System.out.println("Введите значение для z:");
       int z = scanner.nextInt();
 
+      scanner.close();
+
       if (a >= x && a >= y || b >= x && b >= y ||
           a >= x && a >= z || b >= x && b >= z ||
           a >= y && a >= z || b >= y && b >= z) {

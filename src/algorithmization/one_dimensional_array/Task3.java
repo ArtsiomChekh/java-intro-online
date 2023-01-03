@@ -14,6 +14,7 @@ public class Task3 {
       Scanner scanner = new Scanner(System.in);
       System.out.println("Введите значение для числа N:");
       int n = scanner.nextInt();
+      scanner.close();
 
       Random random = new Random();
 

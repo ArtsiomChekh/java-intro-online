@@ -15,6 +15,7 @@ public class Task10 {
       Scanner scanner = new Scanner(System.in);
       System.out.println("Введите значение для числа n:");
       int n = scanner.nextInt();
+      scanner.close();
 
       int[] array = new int[n];
 

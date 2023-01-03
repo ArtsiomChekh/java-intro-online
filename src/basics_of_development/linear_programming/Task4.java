@@ -16,7 +16,6 @@ public class Task4 {
     try {
 
       Scanner scanner = new Scanner(System.in);
-
       System.out.println("Введите действительное число в формате nnn.ddd:");
       String stringR = scanner.nextLine();
       scanner.close();

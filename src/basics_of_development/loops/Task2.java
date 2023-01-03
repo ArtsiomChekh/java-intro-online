@@ -22,6 +22,7 @@ public class Task2 {
 
       System.out.println("Введите значение для числа h (шаг):");
       int h = scanner.nextInt();
+
       scanner.close();
 
       int y = 0;

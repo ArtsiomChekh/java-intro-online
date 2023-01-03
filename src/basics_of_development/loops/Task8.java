@@ -19,6 +19,8 @@ public class Task8 {
 
       System.out.println("Введите значение для второго числа:");
       String secondNumber = scanner.nextLine();
+
+      scanner.close();
 // Использую Set, чтобы избежать повторений
       Set<Character> list = new HashSet<>();
 // Прохожу двумя циклами по всем цифрам и сравниваю их

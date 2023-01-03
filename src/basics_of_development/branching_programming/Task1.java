@@ -20,6 +20,8 @@ public class Task1 {
       System.out.println("Введите значение для второго угла:");
       int y = scanner.nextInt();
 
+      scanner.close();
+
       if (x + y < 180 && x + y > 0) {
         System.out.println("Треугольник существует");
         if (x == 90 || y == 90 || x + y == 90) {

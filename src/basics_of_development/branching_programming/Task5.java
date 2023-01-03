@@ -12,11 +12,11 @@ public class Task5 {
 
     try {
       Scanner scanner = new Scanner(System.in);
-
       System.out.println("Введите значение для x:");
       int x = scanner.nextInt();
+      scanner.close();
 
-      double result = 0;
+      double result;
 
       if (x < 3 || x == 3) {
         result = Math.pow(x, 2) - (3 * x) + 9;

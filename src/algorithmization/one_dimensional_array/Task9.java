@@ -15,6 +15,7 @@ public class Task9 {
       Scanner scanner = new Scanner(System.in);
       System.out.println("Введите значение для числа n:");
       int n = scanner.nextInt();
+      scanner.close();
 
       int[] array = new int[n];
 
@@ -29,8 +30,8 @@ public class Task9 {
       int[] arrayOfCount = new int[array.length];
 
       for (int i = 0; i < array.length; i++) {
-        for (int j = 0; j < array.length; j++) {
-          if (array[i] == array[j]) {
+        for (int k : array) {
+          if (array[i] == k) {
             arrayOfCount[i]++;
           }
         }

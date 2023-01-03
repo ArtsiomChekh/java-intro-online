@@ -16,6 +16,7 @@ public class Task1 {
       Scanner scanner = new Scanner(System.in);
       System.out.println("Введите значение для числа K:");
       int k = scanner.nextInt();
+      scanner.close();
 
       //заполним массив и проверим на кратность
       for (int i = 0; i < array.length; i++) {
