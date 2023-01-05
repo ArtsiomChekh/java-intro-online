@@ -1,9 +1,9 @@
 package algorithmization.array_of_arrays;
 
 /*
-  Отсортировать строки матрицы по возрастанию и убыванию значений элементов.
+   Отсотрировать стобцы матрицы по возрастанию и убыванию значений элементов.
 */
-public class Task12 {
+public class Task13 {
 
   public static void main(String[] args) {
 
@@ -20,14 +20,14 @@ public class Task12 {
       }
 
       // сортировка по возрастанию
-      for (int i = 0; i < matrix.length; i++) {
-        for (int j = 0; j < matrix[i].length; j++) {
-          for (int k = 0; k < matrix[j].length; k++) {
+      for (int i = 0; i < matrix[0].length; i++) {
+        for (int j = 0; j < matrix.length; j++) {
+          for (int k = 0; k < matrix.length; k++) {
             int temp;
-            if (matrix[i][j] < matrix[i][k]) {
-              temp = matrix[i][j];
-              matrix[i][j] = matrix[i][k];
-              matrix[i][k] = temp;
+            if (matrix[j][i] < matrix[k][i]) {
+              temp = matrix[j][i];
+              matrix[j][i] = matrix[k][i];
+              matrix[k][i] = temp;
             }
           }
         }
@@ -42,14 +42,14 @@ public class Task12 {
       }
 
       // сортировка по убыванию
-      for (int i = 0; i < matrix.length; i++) {
-        for (int j = 0; j < matrix[i].length; j++) {
-          for (int k = 0; k < matrix[j].length; k++) {
+      for (int i = 0; i < matrix[0].length; i++) {
+        for (int j = 0; j < matrix.length; j++) {
+          for (int k = 0; k < matrix.length; k++) {
             int temp;
-            if (matrix[i][j] > matrix[i][k]) {
-              temp = matrix[i][j];
-              matrix[i][j] = matrix[i][k];
-              matrix[i][k] = temp;
+            if (matrix[j][i] > matrix[k][i]) {
+              temp = matrix[j][i];
+              matrix[j][i] = matrix[k][i];
+              matrix[k][i] = temp;
             }
           }
         }
