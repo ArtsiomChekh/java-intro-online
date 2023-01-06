@@ -16,11 +16,14 @@ public class Task4 {
 
       int[] array = new int[]{2, 4, 4, 12, 51, 62, 272, 400, 2000, 10000};
 
+      int permutationNumber = 0;
+
       // сортировка обменами
       for (int i = 0; i < array.length; i++) {
         int temp;
         for (int j = 0; j < array.length; j++) {
           if (array[i] > array[j]) {
+            permutationNumber++;
             temp = array[i];
             array[i] = array[j];
             array[j] = temp;
@@ -29,6 +32,7 @@ public class Task4 {
       }
 
       System.out.println(Arrays.toString(array));
+      System.out.println("Количество перестановок: " + permutationNumber);
 
     } catch (Exception e) {
       e.printStackTrace();
