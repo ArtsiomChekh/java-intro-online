@@ -7,11 +7,17 @@ package algorithmization.decomposition;
 public class Task1 {
 
   public static void main(String[] args) {
-    int a = 30;
-    int b = 18;
-    System.out.println("НОД равен: " + nodByEvklid(a, b));
-    System.out.println("НОК равен: " + nok(a, b));
+    try {
 
+      int a = 30;
+      int b = 18;
+
+      System.out.println("НОД равен: " + nodByEvklid(a, b));
+      System.out.println("НОК равен: " + nok(a, b));
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   public static int nodByEvklid(int a, int b) {
