@@ -2,5 +2,5 @@ out
 java-intro-online.iml
 .idea
 src/.DS_Store
-src/basics_of_development/.DS_Store
+src/com/epam/training/basics_of_development/.DS_Store
 .DS_Store
