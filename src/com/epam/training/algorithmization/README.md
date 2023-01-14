@@ -1,0 +1,1 @@
+![Image alt](https://github.com/ArtsiomChekh/java-intro-online/raw/master//Users/admin/IdeaProjects/java-intro-online/src/com/epam/training/algorithmization/Tasks.pdf)
