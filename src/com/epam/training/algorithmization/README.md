@@ -1,1 +1,7 @@
-![Image alt](https://github.com/ArtsiomChekh/java-intro-online/raw/master//Users/admin/IdeaProjects/java-intro-online/src/com/epam/training/algorithmization/test.png)
+# Algorithmization
+____
+
+Описание файлов:
+
+Tasks.pdf - файл содержит список задач.
+
