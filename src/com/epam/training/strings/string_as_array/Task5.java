@@ -10,10 +10,10 @@ public class Task5 {
 
     try {
 
-      String stringWithDigits = " Nice to meet   you.   I am glad to see you ";
-      System.out.println(stringWithDigits);
+      String stringWithSpace = " Nice to meet   you.   I am glad to see you ";
+      System.out.println(stringWithSpace);
 
-      System.out.println("Строка после корректировок: \n" + correctingString(stringWithDigits));
+      System.out.println("Строка после корректировок: \n" + correctingString(stringWithSpace));
 
     } catch (Exception e) {
       e.printStackTrace();
