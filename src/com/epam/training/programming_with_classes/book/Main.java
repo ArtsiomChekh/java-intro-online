@@ -1,4 +1,4 @@
-package com.epam.training.programming_with_classes.Book;
+package com.epam.training.programming_with_classes.book;
 
 import java.util.Scanner;
 

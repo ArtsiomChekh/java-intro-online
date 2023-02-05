@@ -1,4 +1,4 @@
-package com.epam.training.programming_with_classes.Book;
+package com.epam.training.programming_with_classes.book;
 /*
   Создать второй класс, агрегирующий массив типа Book, с подходящими конструкторами и
   методами. Задать критерии выбора данных и вывести эти данные на консоль.

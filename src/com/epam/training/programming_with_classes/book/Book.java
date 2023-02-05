@@ -1,4 +1,4 @@
-package com.epam.training.programming_with_classes.Book;
+package com.epam.training.programming_with_classes.book;
 /*
   Создать класс Book, спецификация которого приведена ниже. Определить конструкторы, set- и get- методы и
   метод toString(). Создать второй класс, агрегирующий массив типа Book, с подходящими конструкторами и
