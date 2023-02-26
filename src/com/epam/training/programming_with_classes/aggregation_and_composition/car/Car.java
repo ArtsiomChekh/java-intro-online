@@ -1,4 +1,4 @@
-package com.epam.training.programming_with_classes.aggregation_and_composition.task2;
+package com.epam.training.programming_with_classes.aggregation_and_composition.car;
 /*
   2. Создать объект класса Автомобиль, используя классы Колесо, Двигатель. Методы: ехать, заправляться,
   менять колесо, вывести на консоль марку автомобиля.
