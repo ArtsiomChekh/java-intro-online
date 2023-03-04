@@ -4,13 +4,13 @@ package com.epam.training.tasks;
 
     private String author;
     private String title;
-    private int year;
     private BookType type;
 
-    public Book(String author, String title, int year, BookType type) {
+    public Book(String author, String title, BookType type) {
       this.author = author;
-      this.title = title;
-      this.year = year;
+
+     this.title = title;
+
       this.type = type;
     }
 
@@ -19,9 +19,6 @@ package com.epam.training.tasks;
     }
     public String getTitle() {
       return title;
-    }
-    public int getYear() {
-      return year;
     }
     public BookType getType() {
       return type;
@@ -35,12 +32,12 @@ package com.epam.training.tasks;
       this.title = title;
     }
 
-    public void setYear(int year) {
-      this.year = year;
-    }
-
     public void setType(BookType type) {
       this.type = type;
     }
 
-}
+    @Override
+    public String toString() {
+      return  author + " | " + title + " | " + type;
+    }
+  }
