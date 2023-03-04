@@ -6,12 +6,17 @@ package com.epam.training.tasks;
     private String title;
     private BookType type;
 
-    public Book(String author, String title, BookType type) {
+
+    private BookType descriptionBook;
+
+    public Book(String author, String title, BookType type, BookType descriptionBook) {
       this.author = author;
 
      this.title = title;
 
       this.type = type;
+
+      this.descriptionBook = descriptionBook;
     }
 
     public String getAuthor() {
@@ -34,6 +39,14 @@ package com.epam.training.tasks;
 
     public void setType(BookType type) {
       this.type = type;
+    }
+
+    public BookType getDescriptionBook() {
+      return descriptionBook;
+    }
+
+    public void setDescriptionBook(BookType descriptionBook) {
+      this.descriptionBook = descriptionBook;
     }
 
     @Override

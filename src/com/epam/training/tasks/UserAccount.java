@@ -20,6 +20,8 @@ public class UserAccount {
   Scanner scanner = new Scanner(System.in);
   String fileName = "/Users/admin/Documents/accounts.txt";
 
+  private boolean isAdmin = false;
+
   public void homePage() {
     try {
       System.out.println("----------------------");
@@ -41,6 +43,18 @@ public class UserAccount {
       System.out.println(e.getMessage());
     }
   }
+
+  public void showBooksPage(boolean isAdmin) {
+    try {
+      System.out.println("Book List");
+
+
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+
   void login() {
     try {
       Path path = Paths.get(fileName); // !
@@ -66,6 +80,7 @@ public class UserAccount {
       }
       if(found == true) {
         System.out.println("Access granted");
+
       } else {
         System.out.println("Access denied! Invalid username and password");
       }
