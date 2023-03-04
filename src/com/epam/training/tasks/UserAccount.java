@@ -1,5 +1,6 @@
 package com.epam.training.tasks;
 
+import static com.epam.training.tasks.PasswordEncoder.encodePassword;
 import static java.nio.file.StandardOpenOption.APPEND;
 
 import java.io.BufferedOutputStream;
@@ -59,7 +60,7 @@ public class UserAccount {
         String [] account = temp.split(",");
         user = account[0];
         pass = account[1];
-        if(user.equals(username) && pass.equals(password)) {
+        if(user.equals(username) && pass.equals(encodePassword(password))) {
           found = true;
         }
       }
@@ -88,7 +89,7 @@ public class UserAccount {
       String username = scanner.nextLine();
       System.out.println("Enter password: ");
       String password = scanner.nextLine();
-      bufferedWriter.write(username + "," + password);
+      bufferedWriter.write(username + "," + encodePassword(password));
       bufferedWriter.newLine();
       System.out.println("Account has been successfully saved!");
       bufferedWriter.close();
