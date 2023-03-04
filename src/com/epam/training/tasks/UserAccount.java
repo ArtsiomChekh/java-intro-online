@@ -20,7 +20,7 @@ public class UserAccount {
   Scanner scanner = new Scanner(System.in);
   String fileName = "/Users/admin/Documents/accounts.txt";
 
-  public UserAccount() {
+  public void homePage() {
     try {
       System.out.println("----------------------");
       System.out.println("1. Create user account");
@@ -34,7 +34,7 @@ public class UserAccount {
         login();
       } else {
         System.out.println("Invalid choice!");
-        new UserAccount();
+        homePage();
       }
 
     } catch (Exception e) {
@@ -72,7 +72,7 @@ public class UserAccount {
       bufferedReader.close();
       System.out.println("Press any key to continue...");
       String proc = scanner.nextLine();
-      new UserAccount();
+      homePage();
 
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -97,7 +97,7 @@ public class UserAccount {
 
       System.out.println("Press any key to continue...");
       String proc = scanner.nextLine();
-      new UserAccount();
+      homePage();
 
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -105,7 +105,9 @@ public class UserAccount {
   }
 
   public static void main(String[] args) {
-    new UserAccount();
+    UserAccount userAccount = new UserAccount();
+    userAccount.homePage();
+
   }
 
 }
