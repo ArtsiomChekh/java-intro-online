@@ -2,6 +2,7 @@ package com.epam.training.tasks.library;
 
   public class Book {
 
+    private int id;
     private String author;
     private String title;
     private BookType type;
@@ -9,7 +10,8 @@ package com.epam.training.tasks.library;
 
     private String descriptionBook;
 
-    public Book(String author, String title, BookType type, String descriptionBook) {
+    public Book(int id, String author, String title, BookType type, String descriptionBook) {
+      this.id = id;
       this.author = author;
 
      this.title = title;
@@ -48,9 +50,18 @@ package com.epam.training.tasks.library;
     public void setDescriptionBook(String descriptionBook) {
       this.descriptionBook = descriptionBook;
     }
+    public int getId() {
+      return id;
+    }
+
+    public void setId(int id) {
+      this.id = id;
+    }
 
     @Override
     public String toString() {
-      return  author + " | " + title + " | " + type.getType() + " | " + descriptionBook;
+      return id + " | " + author + " | " + title + " | " + type.getType() + " | " + descriptionBook;
     }
+
+
   }

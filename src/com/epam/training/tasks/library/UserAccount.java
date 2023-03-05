@@ -1,9 +1,10 @@
 package com.epam.training.tasks.library;
 
 import static com.epam.training.tasks.library.PasswordEncoder.encodePassword;
-import static java.lang.Enum.valueOf;
 import static java.nio.file.StandardOpenOption.APPEND;
 
+import com.epam.training.tasks.library.service.BooksView;
+import com.epam.training.tasks.library.service.BooksViewImp;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -15,18 +16,22 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class UserAccount {
 
+  private BooksView booksView;
+  UserAccount (BooksView booksView){
+    this.booksView = booksView;
+  }
+  public UserAccount() {
+
+  };
   Scanner scanner = new Scanner(System.in);
   String fileName = "/Users/admin/IdeaProjects/java-intro-online/src/com/epam/training/tasks/library/data/accounts.txt";
   String fileNameCatalog = "/Users/admin/IdeaProjects/java-intro-online/src/com/epam/training/tasks/library/data/catalog.txt";
 
-
-  private boolean isAdmin = false;
 
   public void homePage() {
     try {
@@ -50,29 +55,31 @@ public class UserAccount {
     }
   }
 
-  public void showBooksPage(boolean isAdmin) {
+  public void showBooksPage() {
     try {
       System.out.println("------------------------Book List--------------------------------");
       System.out.println("Author-----------Title-------------Type---------------Description");
       List<Book> bookList = new ArrayList<>();
-      Path path = Paths.get(fileNameCatalog); // !
+      Path path = Paths.get(fileNameCatalog);
       InputStream inputStream = Files.newInputStream(path);
       BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
       String temp = null;
+      int id;
       String author;
       String title;
       String type;
       String description;
       while ((temp = bufferedReader.readLine()) != null) {
         String[] tempBooks = temp.split("\\|");
-        author = tempBooks[0].trim();
-        title = tempBooks[1].trim();
-        type = tempBooks[2].trim();
-        description = tempBooks[3].trim();
-        bookList.add(new Book(author, title, BookType.valueOf(type.toUpperCase()), description));
+        id = Integer.parseInt(tempBooks[0].trim());
+        author = tempBooks[1].trim();
+        title = tempBooks[2].trim();
+        type = tempBooks[3].trim();
+        description = tempBooks[4].trim();
+        bookList.add(new Book(id, author, title, BookType.valueOf(type.toUpperCase()), description));
       }
 
-      printBooks(bookList);
+      booksView.viewBooks(bookList);
 
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -82,7 +89,7 @@ public class UserAccount {
 
   public void login() {
     try {
-      Path path = Paths.get(fileName); // !
+      Path path = Paths.get(fileName);
       InputStream inputStream = Files.newInputStream(path);
       BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
       System.out.println("\n LOGIN \n");
@@ -105,7 +112,7 @@ public class UserAccount {
       }
       if (found == true) {
         System.out.println("Access granted");
-        showBooksPage(false);
+        showBooksPage();
 
       } else {
         System.out.println("Access denied! Invalid username and password");
@@ -122,7 +129,7 @@ public class UserAccount {
 
   public void createAccount() {
     try {
-      Path path = Paths.get(fileName); // !
+      Path path = Paths.get(fileName);
       OutputStream outputStream = new BufferedOutputStream(Files.newOutputStream(path, APPEND));
       BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
       System.out.println("\n CREATE ACCOUNT \n");
@@ -130,7 +137,10 @@ public class UserAccount {
       String username = scanner.nextLine();
       System.out.println("Enter password: ");
       String password = scanner.nextLine();
-      bufferedWriter.write(username + "," + encodePassword(password));
+      System.out.println("Enter email: ");
+      String emailString = scanner.nextLine();
+      Email email = new Email(emailString);
+      bufferedWriter.write(username + "," + encodePassword(password) + "," + email.toString());
       bufferedWriter.newLine();
       System.out.println("Account has been successfully saved!");
       bufferedWriter.close();
@@ -145,57 +155,9 @@ public class UserAccount {
     }
   }
 
-  public int choicePosition(int min, int max) {
-    int res = scanner.nextInt();
-    if (res < min || res > max) {
-      System.out.println("Invalid input: try again");
-      return choicePosition(min, max);
-    } else {
-      return res;
-    }
-  }
-
-  public void printBooks(List<Book> books) {
-    try {
-      int pageCount = books.size() / 10;
-      if (books.size() % 10 != 0) {
-        pageCount++;
-      }
-      int index = 0;
-      int currentPage = 1;
-      while (true) {
-        for (int i = index; i < Integer.min(books.size(), index + 10); i++) {
-          System.out.println(books.get(i));
-        }
-        System.out.println("Page: " + currentPage + "/" +  pageCount);
-        System.out.println("1 - next page, 2 - previous page, 3 - exit");
-        int choice = choicePosition(1, 3);
-        if (choice == 1) {
-          currentPage++;
-          if(currentPage > pageCount){
-            currentPage--;
-          }
-          index += 10;
-          if (index >= books.size()) {
-            index -= 10;
-          }
-        } else if (choice == 2) {
-          currentPage--;
-          if(currentPage < 1){
-            currentPage++;
-          }
-          index = Integer.max(0, index - 10);
-        } else {
-          return;
-        }
-      }
-    } catch (Exception e) {
-      System.out.println(e.getMessage());
-    }
-  }
-
   public static void main(String[] args) {
-    UserAccount userAccount = new UserAccount();
+    BooksView booksView = new BooksViewImp();
+    UserAccount userAccount = new UserAccount(booksView);
     userAccount.homePage();
 
   }
