@@ -1,4 +1,4 @@
-package com.epam.training.tasks;
+package com.epam.training.tasks.library;
 
 public interface BookView {
 

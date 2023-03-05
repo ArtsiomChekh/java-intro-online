@@ -1,4 +1,4 @@
-package com.epam.training.tasks;
+package com.epam.training.tasks.library;
 
   public class Book {
 
@@ -7,9 +7,9 @@ package com.epam.training.tasks;
     private BookType type;
 
 
-    private BookType descriptionBook;
+    private String descriptionBook;
 
-    public Book(String author, String title, BookType type, BookType descriptionBook) {
+    public Book(String author, String title, BookType type, String descriptionBook) {
       this.author = author;
 
      this.title = title;
@@ -41,16 +41,16 @@ package com.epam.training.tasks;
       this.type = type;
     }
 
-    public BookType getDescriptionBook() {
+    public String getDescriptionBook() {
       return descriptionBook;
     }
 
-    public void setDescriptionBook(BookType descriptionBook) {
+    public void setDescriptionBook(String descriptionBook) {
       this.descriptionBook = descriptionBook;
     }
 
     @Override
     public String toString() {
-      return  author + " | " + title + " | " + type;
+      return  author + " | " + title + " | " + type.getType() + " | " + descriptionBook;
     }
   }

@@ -1,4 +1,4 @@
-package com.epam.training.tasks;
+package com.epam.training.tasks.library;
 
     import java.security.MessageDigest;
     import java.security.NoSuchAlgorithmException;
