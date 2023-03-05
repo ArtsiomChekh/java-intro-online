@@ -71,15 +71,8 @@ public class UserAccount {
         description = tempBooks[3].trim();
         bookList.add(new Book(author, title, BookType.valueOf(type.toUpperCase()), description));
       }
-      int bookCount = 0;
-      while (bookCount < 10) {
-        for (Book book : bookList) {
-          System.out.println(book.toString());
-          bookCount++;
-        }
-        System.out.println("Страница 1");
-      }
 
+      printBooks(bookList);
 
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -87,7 +80,7 @@ public class UserAccount {
   }
 
 
-  void login() {
+  public void login() {
     try {
       Path path = Paths.get(fileName); // !
       InputStream inputStream = Files.newInputStream(path);
@@ -127,7 +120,7 @@ public class UserAccount {
     }
   }
 
-  void createAccount() {
+  public void createAccount() {
     try {
       Path path = Paths.get(fileName); // !
       OutputStream outputStream = new BufferedOutputStream(Files.newOutputStream(path, APPEND));
@@ -147,6 +140,55 @@ public class UserAccount {
       String proc = scanner.nextLine();
       homePage();
 
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  public int choicePosition(int min, int max) {
+    int res = scanner.nextInt();
+    if (res < min || res > max) {
+      System.out.println("Invalid input: try again");
+      return choicePosition(min, max);
+    } else {
+      return res;
+    }
+  }
+
+  public void printBooks(List<Book> books) {
+    try {
+      int pageCount = books.size() / 10;
+      if (books.size() % 10 != 0) {
+        pageCount++;
+      }
+      int index = 0;
+      int currentPage = 1;
+      while (true) {
+        for (int i = index; i < Integer.min(books.size(), index + 10); i++) {
+          System.out.println(books.get(i));
+        }
+        System.out.println("Page: " + currentPage + "/" +  pageCount);
+        System.out.println("1 - next page, 2 - previous page, 3 - exit");
+        int choice = choicePosition(1, 3);
+        if (choice == 1) {
+          currentPage++;
+          if(currentPage > pageCount){
+            currentPage--;
+          }
+          index += 10;
+          if (index >= books.size()) {
+            index -= 10;
+          }
+        } else if (choice == 2) {
+          currentPage--;
+          if(currentPage < 1){
+            currentPage++;
+          }
+          index = Integer.max(0, index - 10);
+        } else {
+          return;
+        }
+      }
     } catch (Exception e) {
       System.out.println(e.getMessage());
     }
